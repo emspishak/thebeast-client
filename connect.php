@@ -12,8 +12,12 @@ top("Connect to Cinosaurus");
 ?>
 <h1>Connect to Cinosaurus</h1>
 <p>
-	UUID: <?= get_uuid() ?>
+	You have successfully been connected to Cinesaurus with a UUID of: <?= get_uuid() ?>
 </p>
+<form type="post" action="upload.php">
+	<label>Directory movies are located in: <input type="text" name="directory" /></label>
+	<input type="submit" />
+</form>
 <?php
 bottom();
 ?>
