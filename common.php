@@ -47,4 +47,25 @@ function post($page, $params, $json=TRUE) {
 		return $r->getResponseBody();	
 	}
 }
+
+function init_db() {
+	$db = mysql_connect("localhost", "watch", "lotsofmovies");
+	mysql_select_db("cinesaurus");
+	return $db;
+}
+
+function get_uuid() {
+	$db = init_db();
+	$result = mysql_query("select * from info;");
+	$row = mysql_fetch_array($result);
+	return $row["uuid"]:	
+}
+
+function insert_uuid($uuid, $clear=TRUE) {
+	$db = init_db();
+	if ($clear) {
+		mysql_query("truncate info;");
+	}
+	$result = mysql_query("insert into info (uuid) VALUES('" . $uuid . "');");
+}
 ?>

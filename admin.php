@@ -6,7 +6,7 @@ session_start();
 
 if (!logged_in()) {
 	if (!isset($_POST["username"]) || strlen($_POST["username"]) == 0 || !isset($_POST["password"]) || strlen($_POST["password"]) == 0) {
-		die("Missing so login credentials");	
+		die("Missing some login credentials");	
 	}
 	$params = array('username' => $_POST["username"], 'password' => $_POST["password"]);
 	$response = post('/client_login', $params);
