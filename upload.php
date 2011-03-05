@@ -88,23 +88,25 @@ print_r($result);
 </script>
 <div id="results">
 	<h2>I couldn't figure out what movie you meant with the following files. Please select the correct movie or enter a better movie name (you might want to find the exact name from IMDB.)</h2>
-	<?php
-	foreach ($result->non_matches as $non_match) {
-		?>
-		<div class="nonmatch">
-			Filename: <?= $non_match->filename ?><br />
-			<?php
-			foreach ($non_match->matches as $match) {
-				?>
-				<label><input type="radio" name="<?= $non_match->filename ?>" />Possible match: <?= $match->name ?> (<?= $match->year ?>)</label><br />
-				<?php	
-			}
-			?>
-			Or, <label><input type="radio" name="<?= $non_match->filename ?>" />Enter your own name<input type="text" /></label>
-		</div>
+	<form method="post" action="upload_again.php">
 		<?php
-	}
-	?>
+		foreach ($result->non_matches as $non_match) {
+			?>
+			<div class="nonmatch">
+				Filename: <?= $non_match->filename ?><br />
+				<?php
+				foreach ($non_match->matches as $match) {
+					?>
+					<label><input type="radio" name="<?= $non_match->filename ?>" value="<?= $match->name ?>;;;<?= $match->year ?>" />Possible match: <?= $match->name ?> (<?= $match->year ?>)</label><br />
+					<?php	
+				}
+				?>
+				<label><input type="radio" name="<?= $non_match->filename ?>" value="entered_own" />Or, Enter your own name<input type="text" name="<?= $non_match->filename ?>;;;own"/></label>
+			</div>
+			<?php
+		}
+		?>
+	</form>
 </div>
 <?php
 bottom();
