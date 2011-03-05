@@ -25,6 +25,10 @@ $keys = array_keys($_POST);
 $new_matches = array();
 foreach ($keys as $key) {
 	if (strpos($key, ";;;own") === FALSE) {
+		$pos = strrpos($key, "_");
+		if ($pos !== FALSE) {
+			$key[$pos] = ".";	
+		}
 		$new_match = new NewMatch($key);
 		if ($_POST[$key] == "entered_own") {
 			$new_match->new_name = $_POST[$key . ";;;own"];
