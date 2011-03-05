@@ -2,16 +2,21 @@
 
 include("common.php");
 
-$r = new HttpRequest($site_root . '/client_login', HttpRequest::METH_POST);
-$r->addPostFields(array('username' => $_REQUEST["username"], 'password' => $_REQUEST["password"]));
-$r->send();
-$response = json_decode($r->getResponseBody());
-
-if (isset($response->error)) {
-	die ("invalid login");	
-}
 session_start();
-$_SESSION["server_session_key"] = $response->session_key;
+
+if (!logged_in()) {
+	if (!isset($_POST["username"]) || !isset($_POST["password"])) {
+		die("Login credentials not sent");	
+	}
+	$r = new HttpRequest($site_root . '/client_login', HttpRequest::METH_POST);
+	$r->addPostFields(array('username' => $_POST["username"], 'password' => $_POST["password"]));
+	$r->send();
+	$response = json_decode($r->getResponseBody());
+	if (isset($response->error)) {
+		die ("invalid login");	
+	}
+	$_SESSION["server_session_key"] = $response->session_key;
+}
 
 top("Admin Interface");
 ?>
