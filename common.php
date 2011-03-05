@@ -58,7 +58,7 @@ function get_uuid() {
 	$db = init_db();
 	$result = mysql_query("select * from info;");
 	$row = mysql_fetch_array($result);
-	return $row["uuid"]:	
+	return $row["uuid"];
 }
 
 function insert_uuid($uuid, $clear=TRUE) {
