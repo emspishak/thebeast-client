@@ -40,7 +40,7 @@ function post($page, $params, $json=TRUE) {
 	$r = new HttpRequest($site_root . $page, HttpRequest::METH_POST);
 	$r->addPostFields($params);
 	$r->send();
-	echo $r->getResponseBody();
+	#echo $r->getResponseBody();
 	if ($json) {
 		return json_decode($r->getResponseBody());
 	} else {

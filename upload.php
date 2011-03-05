@@ -85,12 +85,14 @@ top("Upload your movie list");
 <h1>Upload your movie list</h1>
 <div id="loading">
 	<img src="images/loading.gif" alt="Loading" />
+	Please wait. This could take a very long time. I'm talking ten minutes.
 </div>
 <div id="area"></div>
 <?php
 set_time_limit(1000);
 flush();
 $result = post("/add_movies", $params);
+print_r($result);
 ?>
 <script type="text/javascript">
 	document.getElementById('loading').innerHTML = '';
