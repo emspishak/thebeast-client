@@ -28,7 +28,7 @@ $keys = array_keys($_POST);
 $new_matches = array();
 foreach ($keys as $key) {
 	if (strpos($key, ";;;own") === FALSE) {
-		$filename = preg_replace("\\%\\%\\%", " ", $key);
+		$filename = preg_replace("/\\%\\%\\%/", " ", $key);
 		$pos = strrpos($filename, "_");
 		if ($pos !== FALSE) {
 			$filename[$pos] = ".";	
