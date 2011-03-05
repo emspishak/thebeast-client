@@ -93,7 +93,7 @@ flush();
 $result = post("/add_movies", $params);
 ?>
 <script type="text/javascript">
-	document.getElementById('loading').innerHtml = '';
+	document.getElementById('loading').innerHTML = '';
 </script>
 <?php
 bottom();
