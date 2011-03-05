@@ -10,7 +10,7 @@ $response = json_decode($r->getResponseBody());
 if (isset($response->error)) {
 	die ("invalid login");	
 }
-$session_start();
+session_start();
 $_SESSION["server_session_key"] = $response->session_key;
 
 top("Admin Interface");
