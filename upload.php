@@ -97,10 +97,10 @@ print_r($result);
 			foreach ($non_match->matches as $match) {
 				?>
 				<label><input type="radio" name="<?= $non_match->filename ?>" />Possible match: <?= $match->name ?> (<?= $match->year ?>)</label><br />
-				Or, <label>Enter your own name<input type="text" /></label>
 				<?php	
 			}
 			?>
+			Or, <label>Enter your own name<input type="text" /></label>
 		</div>
 		<?php
 	}
