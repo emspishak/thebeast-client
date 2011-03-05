@@ -100,7 +100,7 @@ print_r($result);
 				<?php	
 			}
 			?>
-			Or, <label>Enter your own name<input type="text" /></label>
+			Or, <label><input type="radio" name="<?= $non_match->filename ?>" />Enter your own name<input type="text" /></label>
 		</div>
 		<?php
 	}
