@@ -8,7 +8,7 @@ $(window).load(function() {
 	$('#debug').html = data;
 	jQuery.ajax({
 		url: url,
-		type: 'post',
+		type: 'POST',
 		data: data,
 		success: display_results
 	});
