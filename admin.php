@@ -8,11 +8,9 @@ if (!logged_in()) {
 	if (!isset($_POST["username"]) || !isset($_POST["password"])) {
 		die("Login credentials not sent");	
 	}
-	$r = new HttpRequest($site_root . '/client_login', HttpRequest::METH_POST);
-	$r->addPostFields(array('username' => $_POST["username"], 'password' => $_POST["password"]));
-	$r->send();
+	$params = array('username' => $_POST["username"], 'password' => $_POST["password"]);
+	$response = post('/client_login', $params);
 	
-	$response = json_decode($r->getResponseBody());
 	if (isset($response->error)) {
 		die ("invalid login");	
 	}

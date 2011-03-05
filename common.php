@@ -34,4 +34,14 @@ function check_logged_in() {
 	}
 }
 
+function post($page, $params, $json=TRUE) {
+	$r = new HttpRequest($site_root . $page, HttpRequest::METH_POST);
+	$r->addPostFields($params);
+	$r->send();
+	if ($json) {
+		return json_decode($r->getResponseBody());
+	} else {
+		return $r->getResponseBody();	
+	}
+}
 ?>
