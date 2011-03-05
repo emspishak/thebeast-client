@@ -6,8 +6,11 @@ $r = new HttpRequest($site_root . '/client_login', HttpRequest::METH_POST);
 $r->addPostFields(array('username' => $_REQUEST["username"], 'password' => $_REQUEST["password"]));
 $r->send();
 $response = json_decode($r->getResponseBody());
-check_logged_in();
 
+if (isset($response->error)) {
+	die ("invalid login");	
+}
+$session_start();
 $_SESSION["server_session_key"] = $response->session_key;
 
 top("Admin Interface");
