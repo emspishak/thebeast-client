@@ -37,5 +37,6 @@ foreach ($keys as $key) {
 	}
 }
 print_r($new_matches);
+print("<br>".json_encode($new_matches));
 bottom();
 ?>
