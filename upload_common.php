@@ -11,12 +11,13 @@ function display_non_matches($result) {
 					Filename: <?= $non_match->filename ?><br />
 					<?php
 					foreach ($non_match->matches as $match) {
+						$filename = preg_replace(" ", "%%%", $non_match->filename);
 						?>
-						<label><input type="radio" name="<?= $non_match->filename ?>" value="<?= $match->name ?>;;;<?= $match->year ?>" />Possible match: <?= $match->name ?> (<?= $match->year ?>)</label><br />
+						<label><input type="radio" name="<?= $filename ?>" value="<?= $match->name ?>;;;<?= $match->year ?>" />Possible match: <?= $match->name ?> (<?= $match->year ?>)</label><br />
 						<?php	
 					}
 					?>
-					<label><input type="radio" name="<?= $non_match->filename ?>" value="entered_own" />Or, Enter your own name</label><input type="text" name="<?= $non_match->filename ?>;;;own" />
+					<label><input type="radio" name="<?= $filename ?>" value="entered_own" />Or, Enter your own name</label><input type="text" name="<?= $filename ?>;;;own" />
 				</div>
 				<?php
 			}
