@@ -35,6 +35,8 @@ function check_logged_in() {
 }
 
 function post($page, $params, $json=TRUE) {
+	global $site_root;
+	
 	$r = new HttpRequest($site_root . $page, HttpRequest::METH_POST);
 	$r->addPostFields($params);
 	$r->send();
