@@ -5,7 +5,7 @@ $(window).load(function() {
 		session_id: sessionId,
 		movies: movies
 	}
-	$('#debug').html = data;
+	$('#debug').html(data);
 	jQuery.ajax({
 		url: url,
 		type: 'POST',
