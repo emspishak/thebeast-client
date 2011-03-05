@@ -68,7 +68,6 @@ foreach ($files as $file) {
 $uuid = get_uuid();
 
 $params = array("uuid" => $uuid, "session_id" => $session_id, "movies" => json_encode($movies));
-$result = post("/add_movies", $params);
 #echo $result . "<br><br>";
 print_r($result);
 
@@ -89,5 +88,7 @@ top("Upload your movie list");
 </div>
 <pre id="debug"></pre>
 <?php
+flush();
+$result = post("/add_movies", $params);
 bottom();
 ?>
