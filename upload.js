@@ -4,7 +4,8 @@ $(window).load(function() {
 		uuid: uuid,
 		session_id: sessionId,
 		movies: movies
-	}
+	};
+	alert(data);
 	$('#debug').html(data);
 	jQuery.ajax({
 		url: url,
