@@ -11,6 +11,7 @@ if (!logged_in()) {
 	$r = new HttpRequest($site_root . '/client_login', HttpRequest::METH_POST);
 	$r->addPostFields(array('username' => $_POST["username"], 'password' => $_POST["password"]));
 	$r->send();
+	echo $r->getResponseBody();
 	$response = json_decode($r->getResponseBody());
 	if (isset($response->error)) {
 		die ("invalid login");	
@@ -25,7 +26,7 @@ top("Admin Interface");
 	<a href="logout.php">Logout</a>
 </p>
 <p>
-	<?= $_SESSION["server_session_key"] ?>
+	<?= Logged in as: $_SESSION["server_session_key"] ?>
 </p>
 <h2>Connect this server to Cinosaurus</h2>
 <form method="post" action="connect.php">

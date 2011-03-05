@@ -3,7 +3,7 @@ include("common.php");
 
 $session_key = check_logged_in();
 
-//session_destroy();
+session_destroy();
 
 top("Logout");
 ?>
