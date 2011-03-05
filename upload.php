@@ -69,7 +69,7 @@ $uuid = get_uuid();
 
 $params = array("uuid" => $uuid, "session_id" => $session_id, "movies" => json_encode($movies));
 $result = post("/add_movies", $params);
-print_r($result."<br><br>");
+print($result . "<br><br>");
 print_r(json_decode($result));
 
 top("Upload your movie list");
