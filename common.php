@@ -1,4 +1,6 @@
 <?php
+$site_root = "http://ec2-75-101-227-4.compute-1.amazonaws.com/";
+
 function top($name) {
 	?>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
@@ -18,4 +20,18 @@ function bottom() {
 	</html>
 	<?php	
 }
+
+function logged_in() {
+	return isset($_SESSION["server_session_key"]);	
+}
+
+function check_logged_in() {
+	session_create();
+	if (!logged_in()) {
+		die("You can't be here! You aren't logged in!");	
+	} else {
+		return $_SESSION["server_session_key"];
+	}
+}
+
 ?>
