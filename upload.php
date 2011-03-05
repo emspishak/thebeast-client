@@ -91,8 +91,10 @@ top("Upload your movie list");
 set_time_limit(1000);
 flush();
 $result = post("/add_movies", $params);
+?>
 <script type="text/javascript">
 	document.getElementById('loading').innerHtml = '';
 </script>
+<?php
 bottom();
 ?>
