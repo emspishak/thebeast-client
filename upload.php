@@ -83,12 +83,16 @@ top("Upload your movie list");
 <script src="jquery.js" type="text/javascript"></script>
 <script src="upload.js" type="text/javascript"></script>-->
 <h1>Upload your movie list</h1>
-<div id="area">
+<div id="load">
 	<img src="images/loading.gif" alt="Loading" />
 </div>
-<pre id="debug"></pre>
+<div id="area"></div>
 <?php
+set_time_limit(1000);
 flush();
 $result = post("/add_movies", $params);
+<script type="text/javascript">
+	document.getElementById('loading').innerHtml = '';
+</script>
 bottom();
 ?>
