@@ -16,7 +16,7 @@ top("Cinesaurus Server Administration");
 	<input type="submit" />
 </form>
 <p>
-	Don't have a Cenosaurus account yet? Click <a href="">here</a> to sign up!
+	Don't have a Cenosaurus account yet? Click <a href="<?= $site_root . "/users/new" ?>">here</a> to sign up!
 </p>
 <?php
 bottom();
