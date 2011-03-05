@@ -106,6 +106,7 @@ print_r($result);
 			<?php
 		}
 		?>
+		<input type="submit" />
 	</form>
 </div>
 <?php
