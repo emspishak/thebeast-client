@@ -77,7 +77,6 @@ top("Upload your movie list");
 	<img src="images/loading.gif" alt="Loading" />
 	Please wait. This could take a very long time. I'm talking ten minutes or more.
 </div>
-<div id="area"></div>
 <?php
 set_time_limit(1000);
 flush();
@@ -87,6 +86,25 @@ print_r($result);
 <script type="text/javascript">
 	document.getElementById('loading').innerHTML = '';
 </script>
+<div id="results">
+	<h2>I couldn't figure out what movie you meant with the following files. Please select the correct movie or enter a better movie name (you might want to find the exact name from IMDB.)</h2>
+	<?php
+	foreach ($result->non_matches as $non_match) {
+		?>
+		<div class="nonmatch">
+			Filename: <?= $non_match->filename ?><br />
+			<?php
+			foreach ($result->non_matches->matches as $match) {
+				?>
+				Possible match: <?= $match->name ?> (<?= $match->year ?>)<br />
+				<?php	
+			}
+			?>
+		</div>
+		<?php
+	}
+	?>
+</div>
 <?php
 bottom();
 ?>
