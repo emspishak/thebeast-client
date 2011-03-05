@@ -79,7 +79,6 @@ top("Upload your movie list");
 	Please wait. This could take a very long time. I'm talking ten minutes or more.
 </div>
 <?php
-set_time_limit(1000);
 flush();
 $result = post("/add_movies", $params);
 print_r($result);

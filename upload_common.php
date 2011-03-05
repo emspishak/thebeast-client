@@ -1,4 +1,5 @@
 <?php
+set_time_limit(6000);
 function display_non_matches($result) {
 	?>
 		<div id="results">
