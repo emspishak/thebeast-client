@@ -94,7 +94,7 @@ print_r($result);
 		<div class="nonmatch">
 			Filename: <?= $non_match->filename ?><br />
 			<?php
-			foreach ($result->non_matches->matches as $match) {
+			foreach ($non_match->matches as $match) {
 				?>
 				Possible match: <?= $match->name ?> (<?= $match->year ?>)<br />
 				<?php	
