@@ -11,7 +11,7 @@ if (!logged_in()) {
 	$r = new HttpRequest($site_root . '/client_login', HttpRequest::METH_POST);
 	$r->addPostFields(array('username' => $_POST["username"], 'password' => $_POST["password"]));
 	$r->send();
-	echo $r->getResponseBody();
+	
 	$response = json_decode($r->getResponseBody());
 	if (isset($response->error)) {
 		die ("invalid login");	

@@ -6,7 +6,7 @@ $session_key = check_logged_in();
 $r = new HttpRequest($site_root . "/register_client");
 $r->addPostFields(array("session_id" => $session_key, "name" => $_REQUEST["client_name"]));
 $r->send();
-$respone = json_decode($r->getResponseBody());
+$response = json_decode($r->getResponseBody());
 
 top("Connect to Cinosaurus");
 ?>
