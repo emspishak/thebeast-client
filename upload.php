@@ -58,7 +58,6 @@ $movies = array();
 foreach ($files as $file) {
 	$movie = new ffmpeg_movie($dir . $file, false);
 	$filesize = (int) exec("du -D \"" . $dir . $file . "\"");
-	echo $filesize;
 	$object = new Movie($file, $filesize, $movie->getFrameWidth(),
 						$movie->getFrameHeight(), $movie->getBitRate());
 	$object->audio = new Audio($movie->getAudioBitRate(), $movie->getAudioCodec(), $movie->getAudioSampleRate());
@@ -66,7 +65,7 @@ foreach ($files as $file) {
 	array_push($movies, $object);
 }
 
-print_r($movies);
+echo json_encode($movies);
 
 top("Upload your movie list");
 $post_url = $site_root . "/add_movies";
