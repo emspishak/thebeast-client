@@ -4,7 +4,7 @@ include("common.php");
 $session_key = check_logged_in();
 
 $r = new HttpRequest($site_root . "/register_client");
-$params = array("session_id" => $session_key, "name" => $_REQUEST["client_name"]);
+$params = array('session_id' => $session_key, 'name' => $_REQUEST["client_name"]);
 print_r($params);
 $r->addPostFields($params);
 $r->send();
