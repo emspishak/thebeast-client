@@ -1,5 +1,5 @@
 <?php
-$site_root = "http://ec2-75-101-227-4.compute-1.amazonaws.com/";
+$site_root = "http://ec2-75-101-227-4.compute-1.amazonaws.com";
 
 function top($name) {
 	?>

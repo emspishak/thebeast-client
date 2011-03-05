@@ -3,7 +3,7 @@
 include("common.php");
 session_start();
 if (logged_in()) {
-	header("Location: " . $site_root . "/admin.php");
+	header("Location: /admin.php");
 }
 
 top("Cinesaurus Server Administration");
