@@ -1,8 +1,9 @@
 <?php
+include("common.php");
 $session_key = check_logged_in();
 
 session_destroy();
-include("common.php");
+
 top("Logout");
 ?>
 <p>
