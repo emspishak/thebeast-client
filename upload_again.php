@@ -6,13 +6,7 @@ $session_id = check_logged_in();
 
 
 top("Movie upload!");
-?>
-<pre>
-<?php
-#print_r($_POST);
-?>
-</pre>
-<?php
+
 class NewMatch {
 	public $filename;
 	public $new_name;
@@ -47,7 +41,7 @@ foreach ($keys as $key) {
 #print_r($new_matches);
 $params = array("uuid" => get_uuid(), "session_id" => $session_id, "new_names" => $new_matches);
 $result = post("/fix_non_matches", $params);
-print_r($result);
+//print_r($result);
 display_non_matches($result);
 bottom();
 ?>

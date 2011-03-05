@@ -85,7 +85,7 @@ top("Upload your movie list");
 <?php
 flush();
 $result = post("/add_movies", $params);
-print_r($result);
+//print_r($result);
 ?>
 <script type="text/javascript">
 	document.getElementById('loading').innerHTML = '';

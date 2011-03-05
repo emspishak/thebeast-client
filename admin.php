@@ -26,7 +26,7 @@ top("Admin Interface");
 <p>
 	Logged in as: <?= $_SESSION["server_session_key"] ?>
 </p>
-<h2>Connect this server to Cinosaurus</h2>
+<h2>Connect this server to Cinesaurus</h2>
 <form method="post" action="connect.php">
 	<label>Enter a name for this server: <input type="text" name="client_name" /></label>
 	<input type="submit" />

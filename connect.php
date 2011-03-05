@@ -10,7 +10,7 @@ insert_uuid($response->uuid);
 
 top("Connect to Cinosaurus");
 ?>
-<h1>Connect to Cinosaurus</h1>
+<h1>Connect to Cinesaurus</h1>
 <p>
 	You have successfully been connected to Cinesaurus with a UUID of: <?= get_uuid() ?>
 </p>
