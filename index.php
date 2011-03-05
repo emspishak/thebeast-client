@@ -1,7 +1,7 @@
 <?php
 
 include("common.php");
-session_create();
+session_start();
 if (logged_in()) {
 	header("Location: " . $site_root);
 }
