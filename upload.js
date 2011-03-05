@@ -5,7 +5,7 @@ $(window).load(function() {
 		type: 'post',
 		data: {
 			uuid: uuid,
-			session_id: sessionID,
+			session_id: sessionId,
 			movies: movies
 		},
 		success: display_result
