@@ -11,7 +11,7 @@ function display_non_matches($result) {
 					Filename: <?= $non_match->filename ?><br />
 					<?php
 					foreach ($non_match->matches as $match) {
-						$filename = preg_replace(" ", "%%%", $non_match->filename);
+						$filename = preg_replace("/ /", "%%%", $non_match->filename);
 						?>
 						<label><input type="radio" name="<?= $filename ?>" value="<?= $match->name ?>;;;<?= $match->year ?>" />Possible match: <?= $match->name ?> (<?= $match->year ?>)</label><br />
 						<?php	
