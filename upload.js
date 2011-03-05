@@ -11,7 +11,7 @@ $(window).load(function() {
 		url: url,
 		type: 'POST',
 		data: data,
-		dataType: 'json',
+		dataType: 'html',
 		success: display_results
 	});
 });
