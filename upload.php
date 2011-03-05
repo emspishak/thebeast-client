@@ -83,7 +83,7 @@ top("Upload your movie list");
 <script src="jquery.js" type="text/javascript"></script>
 <script src="upload.js" type="text/javascript"></script>-->
 <h1>Upload your movie list</h1>
-<div id="load">
+<div id="loading">
 	<img src="images/loading.gif" alt="Loading" />
 </div>
 <div id="area"></div>
