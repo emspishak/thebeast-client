@@ -1,9 +1,9 @@
 $(window).load(function() {
 	//alert("loaded!");
 	var data = {
-		uuid: uuid,
-		session_id: sessionId,
-		movies: movies
+		'uuid': uuid,
+		'session_id': sessionId,
+		'movies': movies
 	};
 	//alert(data);
 	//$('#debug').html(data.toSource());
