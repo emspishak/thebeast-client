@@ -26,7 +26,7 @@ function logged_in() {
 }
 
 function check_logged_in() {
-	session_create();
+	session_start();
 	if (!logged_in()) {
 		die("You can't be here! You aren't logged in!");	
 	} else {
