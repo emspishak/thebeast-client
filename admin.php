@@ -5,7 +5,7 @@ include("common.php");
 session_start();
 
 if (!logged_in()) {
-	if (!isset($_POST["username"]) || !isset($_POST["password"])) {
+	if (!isset($_POST["username"]) || strlen($_POST["username"]) == 0 || !isset($_POST["password"]) || strlen(isset($_POST["password"]) == 0) {
 		die("Missing so login credentials");	
 	}
 	$params = array('username' => $_POST["username"], 'password' => $_POST["password"]);
