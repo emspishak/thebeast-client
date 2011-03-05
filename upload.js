@@ -7,13 +7,7 @@ $(window).load(function() {
 	};
 	//alert(data);
 	//$('#debug').html(data.toSource());
-	jQuery.ajax({
-		url: url,
-		type: 'POST',
-		data: data,
-		dataType: 'html',
-		success: display_results
-	});
+	jQuery.post(url, data);
 });
 
 function display_results(data) {
