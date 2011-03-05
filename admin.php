@@ -10,11 +10,11 @@ session_start();
 
 $_SESSION["server_session_key"] = $response->session_key;
 
-header("Admin Interface");
+top("Admin Interface");
 ?>
 	<h1>Admin Interface</h1>
 	<a href="logout.php">Logout</a>
 	<?= $_SESSION["server_session_key"] ?>
 <?php
-footer();
+bottom();
 ?>

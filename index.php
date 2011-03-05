@@ -2,7 +2,7 @@
 
 include("common.php");
 
-header("Cinesaurus Server Administration");
+top("Cinesaurus Server Administration");
 ?>	
 	<h1>Cinesaurus Server Administration</h1>
 	<h2>Log in with your Cinesaurus account</h2>
@@ -15,5 +15,5 @@ header("Cinesaurus Server Administration");
 		Don't have a Cenosaurus account yet? Click <a href="">here</a> to sign up!
 	</p>
 <?php
-footer();
+bottom();
 ?>

@@ -1,5 +1,5 @@
 <?php
-function header($name) {
+function top($name) {
 	?>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -12,7 +12,7 @@ function header($name) {
 	<?php
 }
 
-function footer() {
+function bottom() {
 	?>
 		</body>
 	</html>
