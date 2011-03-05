@@ -6,7 +6,8 @@ html_header();
 
 $r = new HttpRequest('index.php', HttpRequest::METH_POST);
 $r->addPostFields(array('username' => $_REQUEST["username"], 'password' => $_REQUEST["password"]));
-$response = $r->send()->getResponseBody();
+$r->send();
+$response = $r->getResponseBody();
 ?>
 	<head>
 		<title>Admin Interface</title>
