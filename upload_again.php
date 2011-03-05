@@ -48,5 +48,6 @@ foreach ($keys as $key) {
 $params = array("uuid" => get_uuid(), "session_id" => $session_id, "new_names" => $new_matches);
 $result = post("/fix_non_matches", $params);
 print_r($result);
+display_non_matches($result);
 bottom();
 ?>
