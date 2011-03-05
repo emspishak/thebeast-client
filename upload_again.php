@@ -2,7 +2,7 @@
 include("common.php");
 include("upload_common.php");
 
-$session_id check_logged_in();
+$session_id = check_logged_in();
 
 
 top("Movie upload!");
