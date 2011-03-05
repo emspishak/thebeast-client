@@ -10,7 +10,7 @@ print_r($_POST);
 ?>
 </pre>
 <?php
-public class NewMatch {
+class NewMatch {
 	public $filename;
 	public $new_name;
 	public $year;
