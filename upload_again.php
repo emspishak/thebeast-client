@@ -9,7 +9,7 @@ top("Movie upload!");
 ?>
 <pre>
 <?php
-print_r($_POST);
+#print_r($_POST);
 ?>
 </pre>
 <?php
@@ -44,7 +44,7 @@ foreach ($keys as $key) {
 		array_push($new_matches, $new_match);
 	}
 }
-print_r($new_matches);
+#print_r($new_matches);
 $params = array("uuid" => get_uuid(), "session_id" => $session_id, "new_names" => $new_matches);
 $result = post("/fix_non_matches", $params);
 print_r($result);
