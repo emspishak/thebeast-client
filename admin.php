@@ -26,7 +26,7 @@ top("Admin Interface");
 	<a href="logout.php">Logout</a>
 </p>
 <p>
-	<?= Logged in as: $_SESSION["server_session_key"] ?>
+	Logged in as: <?= $_SESSION["server_session_key"] ?>
 </p>
 <h2>Connect this server to Cinosaurus</h2>
 <form method="post" action="connect.php">
