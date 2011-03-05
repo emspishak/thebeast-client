@@ -66,7 +66,7 @@ foreach ($files as $file) {
 
 print_r($movies);
 
-top("Upload your movie list")
+top("Upload your movie list");
 $post_url = $site_root . "/add_movies";
 $uuid = get_uuid();
 ?>
