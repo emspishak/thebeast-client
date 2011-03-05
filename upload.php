@@ -96,7 +96,8 @@ print_r($result);
 			<?php
 			foreach ($non_match->matches as $match) {
 				?>
-				Possible match: <?= $match->name ?> (<?= $match->year ?>)<br />
+				<label><input type="radio" name="<?= $non-match->filename ?>" />Possible match: <?= $match->name ?> (<?= $match->year ?>)</label><br />
+				Or, <label>Enter your own name<input type="text" /></label>
 				<?php	
 			}
 			?>
