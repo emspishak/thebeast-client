@@ -55,7 +55,13 @@ array_shift($files);
 if ($dir[strlen($dir) - 1] != "/") {
 	$dir .= "/";
 }
+
+function handleError($errno, $errstr) {
+	
+}
+
 $movies = array();
+set_error_handler("handleError");
 foreach ($files as $file) {
 	$movie = new ffmpeg_movie($dir . $file, false);
 	$filesize = (int) exec("du -D \"" . $dir . $file . "\"");
