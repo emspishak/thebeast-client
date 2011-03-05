@@ -68,24 +68,14 @@ foreach ($files as $file) {
 $uuid = get_uuid();
 
 $params = array("uuid" => $uuid, "session_id" => $session_id, "movies" => json_encode($movies));
-#echo $result . "<br><br>";
-print_r($result);
 
 top("Upload your movie list");
 
 ?>
-<!--<script type="text/javascript">
-	var url = '<?= $post_url ?>?callback=?';
-	var sessionId = '<?= $session_id ?>';
-	var uuid = '<?= $uuid ?>';
-	var movies = '<?= $json_movies ?>';
-</script>
-<script src="jquery.js" type="text/javascript"></script>
-<script src="upload.js" type="text/javascript"></script>-->
 <h1>Upload your movie list</h1>
 <div id="loading">
 	<img src="images/loading.gif" alt="Loading" />
-	Please wait. This could take a very long time. I'm talking ten minutes.
+	Please wait. This could take a very long time. I'm talking ten minutes or more.
 </div>
 <div id="area"></div>
 <?php
