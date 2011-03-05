@@ -65,7 +65,7 @@ foreach ($files as $file) {
 	array_push($movies, $object);
 }
 
-echo json_encode($movies);
+$json_movies = json_encode($movies);
 
 top("Upload your movie list");
 $post_url = $site_root . "/add_movies";
@@ -75,6 +75,7 @@ $uuid = get_uuid();
 	var url = '<?= $post_url ?>';
 	var sessionId = '<?= $session_id ?>';
 	var uuid = '<?= $uuid ?>';
+	var movies = '<?= $json_movies ?>';
 </script>
 <script src="jquery.js" type="text/javascript"></script>
 <script src="upload.js" type="text/javascript"></script>
