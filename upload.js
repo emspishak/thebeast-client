@@ -8,7 +8,7 @@ $(window).load(function() {
 			session_id: sessionId,
 			movies: movies
 		},
-		success: display_result
+		success: display_results
 	});
 });
 
