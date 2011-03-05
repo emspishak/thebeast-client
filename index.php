@@ -1,7 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?php
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+include("common.php");
+
+html_header();
+?>
 	<head>
 		<title>Cinesaurus Server Administration</title>
 	</head>
@@ -9,10 +11,13 @@
 	<body>
 		<h1>Cinesaurus Server Administration</h1>
 		<h2>Log in with your Cinesaurus account</h2>
-		<form method="POST" action="login.php">
+		<form method="POST" action="admin.php">
 			<label>User name:<input type="text" name="username" /></label>
 			<label>Password:<input type="password" name="password" /></label>
 			<input type="submit" />
 		</form>
+		<p>
+			Don't have a Cenosaurus account yet? Click <a href="">here</a> to sign up!
+		</p>
 	</body>
 </html>

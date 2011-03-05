@@ -14,6 +14,6 @@ $response = $r->send->getResponseBody();
 	
 	<body>
 		<h1>Admin Interface</h1>
-		
+		<?= $response ?>
 	</body>
 </html>
