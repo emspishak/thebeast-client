@@ -8,5 +8,5 @@ top("Upload your movie list")
 <h1>Upload your movie list</h1>
 
 <?php
-bottom():
+bottom();
 ?>
