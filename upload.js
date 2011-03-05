@@ -1,13 +1,15 @@
 $(window).load(function() {
 	//alert("loaded!");
+	var data = {
+		uuid: uuid,
+		session_id: sessionId,
+		movies: movies
+	}
+	$('#debug').html = data;
 	jQuery.ajax({
 		url: url,
 		type: 'post',
-		data: {
-			uuid: uuid,
-			session_id: sessionId,
-			movies: movies
-		},
+		data: data,
 		success: display_results
 	});
 });

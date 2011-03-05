@@ -83,6 +83,7 @@ $uuid = get_uuid();
 <div id="area">
 	<img src="images/loading.gif" alt="Loading" />
 </div>
+<pre id="debug"></pre>
 <?php
 bottom();
 ?>
