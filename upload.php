@@ -58,7 +58,7 @@ $movies = array();
 foreach ($files as $file) {
 	$movie = new ffmpeg_movie($dir . $file, false);
 	$object = new Movie($file, filesize($dir . $file), $movie->getFrameWidth(),
-						$movie->getFrameHeight(), $movie->getBitRate();
+						$movie->getFrameHeight(), $movie->getBitRate());
 	$object->audio = new Audio($movie->getAudioBitRate(), $movie->getAudioCodec(), $movie->getAudioSampleRate());
 	$object->video = new Video($movie->getVideoBitRate(), $movie->getVideoCodec());
 	array_push($movies, $object);
