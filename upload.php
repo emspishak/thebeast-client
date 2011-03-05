@@ -14,8 +14,8 @@ class Movie {
 	public $width;
 	public $height;
 	public $bitrate;
-	public $audio;
-	public $video;
+	//public $audio;
+	//public $video;
 	
 	public function __construct($f, $s, $w, $h, $br) {
 		$this->filename = $f;
@@ -60,12 +60,14 @@ $movies = array();
 
 foreach ($files as $file) {
 	$movie = new ffmpeg_movie($dir . $file, false);
-	$filesize = (int) exec("du -D \"" . $dir . $file . "\"");
-	$object = new Movie($file, $filesize, $movie->getFrameWidth(),
-						$movie->getFrameHeight(), $movie->getBitRate());
-	$object->audio = new Audio($movie->getAudioBitRate(), $movie->getAudioCodec(), $movie->getAudioSampleRate());
-	$object->video = new Video($movie->getVideoBitRate(), $movie->getVideoCodec());
-	array_push($movies, $object);
+	if ($movie) {
+		$filesize = (int) exec("du -D \"" . $dir . $file . "\"");
+		$object = new Movie($file, $filesize, $movie->getFrameWidth(),
+							$movie->getFrameHeight(), $movie->getBitRate());
+		//$object->audio = new Audio($movie->getAudioBitRate(), $movie->getAudioCodec(), $movie->getAudioSampleRate());
+		//$object->video = new Video($movie->getVideoBitRate(), $movie->getVideoCodec());
+		array_push($movies, $object);
+	}
 }
 
 $uuid = get_uuid();
