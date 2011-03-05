@@ -7,7 +7,7 @@ $(window).load(function() {
 			uuid: uuid,
 			session_id: sessionID,
 			movies: movies
-		}
+		},
 		success: display_result
 	});
 });
