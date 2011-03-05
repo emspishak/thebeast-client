@@ -13,8 +13,12 @@ $_SESSION["server_session_key"] = $response->session_key;
 top("Admin Interface");
 ?>
 	<h1>Admin Interface</h1>
-	<a href="logout.php">Logout</a>
-	<?= $_SESSION["server_session_key"] ?>
+	<p>
+		<a href="logout.php">Logout</a>
+	</p>
+	<p>
+		<?= $_SESSION["server_session_key"] ?>
+	</p>
 <?php
 bottom();
 ?>
