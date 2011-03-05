@@ -1,5 +1,5 @@
 <?php
-session_create();
+session_start();
 $session_key = $_SESSION["server_session_key"];
 session_destroy();
 include("common.php");
