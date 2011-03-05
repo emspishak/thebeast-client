@@ -33,7 +33,7 @@ foreach ($keys as $key) {
 			$new_match->new_name = $pieces[0];
 			$new_match->year = $pieces[1];
 		}
-		array_push($new_matches);
+		array_push($new_matches, $new_match);
 	}
 }
 print_r($new_matches);
