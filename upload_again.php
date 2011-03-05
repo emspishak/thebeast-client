@@ -2,6 +2,9 @@
 include("common.php");
 include("upload_common.php");
 
+$session_id check_logged_in();
+
+
 top("Movie upload!");
 ?>
 <pre>
@@ -42,6 +45,7 @@ foreach ($keys as $key) {
 	}
 }
 print_r($new_matches);
-print("<br>".json_encode($new_matches));
+$to_server = array("uuid" => get_uid(), "session_id" => $session_id, "new_names" => $new_matches);
+print("<br>".json_encode($to_server));
 bottom();
 ?>
