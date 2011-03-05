@@ -57,7 +57,7 @@ if ($dir[strlen($dir) - 1] != "/") {
 $movies = array();
 foreach ($files as $file) {
 	$movie = new ffmpeg_movie($dir . $file, false);
-	$filesize = exec("du " . $dir . $file);
+	$filesize = exec("du \"" . $dir . $file . "\"");
 	echo $filesize;
 	$object = new Movie($file, $filesize, $movie->getFrameWidth(),
 						$movie->getFrameHeight(), $movie->getBitRate());
