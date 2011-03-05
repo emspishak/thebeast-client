@@ -5,12 +5,13 @@ $(window).load(function() {
 		session_id: sessionId,
 		movies: movies
 	};
-	alert(data);
-	$('#debug').html(data);
+	//alert(data);
+	//$('#debug').html(data.toSource());
 	jQuery.ajax({
 		url: url,
 		type: 'POST',
 		data: data,
+		dataType: 'json',
 		success: display_results
 	});
 });
