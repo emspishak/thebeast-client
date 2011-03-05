@@ -72,7 +72,7 @@ $post_url = $site_root . "/add_movies";
 $uuid = get_uuid();
 ?>
 <script type="text/javascript">
-	var url = '<?= $post_url ?>';
+	var url = '<?= $post_url ?>?callback=?';
 	var sessionId = '<?= $session_id ?>';
 	var uuid = '<?= $uuid ?>';
 	var movies = '<?= $json_movies ?>';
