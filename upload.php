@@ -65,20 +65,24 @@ foreach ($files as $file) {
 	array_push($movies, $object);
 }
 
-$json_movies = json_encode($movies);
+$uuid = get_uuid();
+
+$params = array("uuid" => $uuid, "session_id" => $session_id, "movies" => json_encode($movies));
+$result = post("/add_movies", $params);
+
+print_r(json_decode($result);
 
 top("Upload your movie list");
-$post_url = $site_root . "/add_movies";
-$uuid = get_uuid();
+
 ?>
-<script type="text/javascript">
+<!--<script type="text/javascript">
 	var url = '<?= $post_url ?>?callback=?';
 	var sessionId = '<?= $session_id ?>';
 	var uuid = '<?= $uuid ?>';
 	var movies = '<?= $json_movies ?>';
 </script>
 <script src="jquery.js" type="text/javascript"></script>
-<script src="upload.js" type="text/javascript"></script>
+<script src="upload.js" type="text/javascript"></script>-->
 <h1>Upload your movie list</h1>
 <div id="area">
 	<img src="images/loading.gif" alt="Loading" />

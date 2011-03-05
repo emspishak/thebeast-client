@@ -7,9 +7,9 @@ $(window).load(function() {
 	};
 	//alert(data);
 	//$('#debug').html(data.toSource());
-	jQuery.post(url, data);
+	jQuery.post(url, data, function(d) {}, 'jsonp');
 });
 
 function display_results(data) {
-	$('#area').html = data;
+	$('#area').html(data);
 }
