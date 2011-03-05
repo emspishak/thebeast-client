@@ -58,6 +58,7 @@ $movies = array();
 foreach ($files as $file) {
 	$movie = new ffmpeg_movie($dir . $file, false);
 	$filesize = exec("du " . $dir . $file);
+	echo $filesize;
 	$object = new Movie($file, $filesize, $movie->getFrameWidth(),
 						$movie->getFrameHeight(), $movie->getBitRate());
 	$object->audio = new Audio($movie->getAudioBitRate(), $movie->getAudioCodec(), $movie->getAudioSampleRate());
