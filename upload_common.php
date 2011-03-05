@@ -2,9 +2,13 @@
 function display_non_matches($result) {
 	?>
 		<div id="results">
+		<?php
 		if (count($result->non_matches) == 0) {
+			?>
 			<h2>Congratsies! You successfully added all of your movies!</h2>
+			<?php
 		} else {
+			?>
 			<h2>I couldn't figure out what movie you meant with the following files. Please select the correct movie or enter a better movie name (you might want to find the exact name from IMDB.)</h2>
 			<form method="post" action="upload_again.php">
 				<?php
@@ -27,7 +31,9 @@ function display_non_matches($result) {
 				?>
 				<input type="submit" />
 			</form>
+			<?php
 		}
+		?>
 		</div>
 	<?php
 }
